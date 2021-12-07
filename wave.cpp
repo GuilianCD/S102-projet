@@ -5,7 +5,7 @@
 
 // sup
 
-// Ceci est inutuioszdq
+// Ceci est utile
 
 using namespace std;
 
