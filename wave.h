@@ -4,6 +4,8 @@
 #include <iostream>
 #include <vector>
 
+using namespace std;
+
 class Wave
 {
 private:
@@ -12,7 +14,27 @@ private:
 public:
 	void write_wav(const std::string &filename) const;
 	void read_wav(const std::string & filename);
+
 };
+///my abomination=============================================================================
+class Matrix{
+    private:
+        vector<vector<double>>lilma;
+    
+    public:
+        Matrix(vector<vector<double>>mat_);
+        vector<vector<double>> get_matrix() const;
+};
+
+class Vecter{
+    private:
+        vector<double>vacma;
+    
+    public:
+        Vecter(vector<double>vec_);
+        vector<double> get_vec() const;
+};
+///end of my abomination=======================================================================
 
 
 typedef struct WAV_HEADER

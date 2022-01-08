@@ -9,7 +9,16 @@
 
 using namespace std;
 
+///my abomination=============================================================================
+Matrix::Matrix(vector<vector<double>>haha){
+	lilma=haha;
+}
+Vecter::Vecter(vector<double>hehe){
+	vacma=hehe;
+}
 
+
+///end of my abomination=======================================================================
 void Wave::write_wav(const string & filename) const
 {
 	const char riffTag[4] = {'R','I','F','F'};         // "RIFF"
