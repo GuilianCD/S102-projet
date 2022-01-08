@@ -5,7 +5,7 @@
 
 // sup
 
-// Ceci est utile
+// Ceci est utile (FAUX)
 
 using namespace std;
 
