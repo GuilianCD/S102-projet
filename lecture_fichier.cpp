@@ -1,14 +1,15 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <vector>
 
 #include "wave.h"
 
-using namespace std;
+#include "matrix.h"
 
-int main()
-{
-	/*
+using namespace std;
+/*
+int main() {
+    
 	// open file
 	ifstream filein("entiers.txt");
 	if(!filein.is_open())
@@ -30,10 +31,7 @@ int main()
 	{
 		cout << ints[i] << endl;
 	}
-	*/
-	Wave test1;
-    test1.read_wav("tetris_encrypted.wav");
-	test1.write_wav("copy_tetris.wav");
-
-	return 0;
+	
+    return 0;
 }
+*/
