@@ -1,8 +1,8 @@
-#include "wave.h"
 
 #include <fstream>
 #include <vector>
 
+#include "wave.h"
 using namespace std;
 
 Wave::Wave(std::vector<short> waveform) {

@@ -10,7 +10,6 @@ class Vector
 private:
     std::vector<int> innerVec;
 public:
-    Vector();
     Vector(std::vector<int> vec);
 
     //Thanks to https://stackoverflow.com/questions/37043078/c-overloading-array-operator#37043183
