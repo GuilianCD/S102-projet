@@ -22,7 +22,13 @@ public:
 
     short getValAt(int i) const;
     int size() const;
+
+    short& operator[](short i);
+    short operator[](short i) const;
+    void setWave(short i, char mot);
+    void readHiddenMsg(const Wave wave,const int key, const int sizeMsg)const;
 };
+std::ostream& operator<<(std::ostream& os, const Wave& waveform);
 
 typedef struct WAV_HEADER
 {

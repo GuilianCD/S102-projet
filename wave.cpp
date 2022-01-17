@@ -1,5 +1,6 @@
 
 #include <fstream>
+#include <iostream>
 #include <vector>
 
 #include "wave.h"
@@ -9,12 +10,42 @@ Wave::Wave(std::vector<short> waveform) {
 	this->waveform = waveform;
 }
 
+/*
 short Wave::getValAt(int i) const {
     return this->waveform.at(i);
 }
-
+*/
 int Wave::size() const {
     return this->waveform.size();
+}
+
+short& Wave::operator[](short i){
+	return this->waveform.at(i);
+}
+
+short Wave::operator[](short i) const{
+	return this->waveform.at(i);
+}
+
+std::ostream& operator<<(std::ostream& os, const Wave& waveform){
+	os << "Displaying vector of size " << waveform.size() << " :" << std::endl;
+    for (int i = 0; i < waveform.size(); i++) {
+        os << waveform[i] << std::endl;
+    }
+    os << std::endl;
+    return os;
+}
+
+void Wave::readHiddenMsg(const Wave wave,const int key, const int sizeMsg)const{
+	string mot;
+	int j = 0;
+	for (int i = 0; i < wave.size(); i++){
+		if (i % key == 0 && j < sizeMsg){
+            mot.push_back(wave[i]);
+			j++;
+        }
+	}
+	cout << "hidden msg is:" << mot << endl;
 }
 
 void Wave::write_wav(const string& filename) const {

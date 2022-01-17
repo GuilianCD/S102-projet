@@ -4,18 +4,19 @@
 
 #include "func.h"
 #include "matrix.h"
+#include "wave.h"
 
 int main(){
-    using namespace std;
-
+    using namespace std; 
+    
     Wave encrypted;
     encrypted.read_wav("tetris_encrypted.wav");
 
-    Matrix decrypt = Matrix::readFromFile("decryption_key.txt");
+    int cleMsg=10;
+    string msgCache = "potato 2000 harvestor from the futur";
+    addHiddenMsg(encrypted, msgCache, cleMsg);
+    encrypted.readHiddenMsg(encrypted,cleMsg,msgCache.size());
 
-    Wave decrypted = applyMatrixToWave(decrypt, encrypted);
-
-    decrypted.write_wav("tetris_decrypted.wav");
 
     return 0;
 }
