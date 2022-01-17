@@ -47,6 +47,16 @@ Wave applyMatrixToWave(const Matrix& mat, const Wave& wave){
 int main(){
     using namespace std;
 
+    Wave encrypted;
+    encrypted.read_wav("tetris_encrypted.wav");
+
+    Matrix decrypt = Matrix::readFromFile("decryption_key.txt");
+
+    Wave decrypted = applyMatrixToWave(decrypt, encrypted);
+
+    decrypted.write_wav("tetris_decrypted.wav");
+
+/*
     Wave w ({0, 1, 2, 1, 0, -1, -2});
 	Matrix m ({2, 5, 1, 3}, 2);
 
@@ -58,7 +68,7 @@ int main(){
     cout << endl;
 
     return 0;
-/*
+
     Wave test1;
     test1.read_wav("tetris_encrypted.wav");
     test1.write_wav("copy_tetris.wav");
