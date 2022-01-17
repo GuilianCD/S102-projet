@@ -12,7 +12,9 @@ private:
 	std::vector<short> waveform;
 
 public:
-    Wave();
+    Wave() {
+        waveform = {};
+    }
     Wave(std::vector<short> waveform);
 
 	void write_wav(const std::string &filename) const;
